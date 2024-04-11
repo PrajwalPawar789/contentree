@@ -1,7 +1,10 @@
-import logo from "./logo.svg";
-// import './App.css';
 import Navbar from "./components/Navbar";
 import BusinessSolutions from "./components/BusinessSolutions";
+import Industries from "./components/Industries";
+import Set from "./components/Set";
+import Footer from "./components/Footer";
+import Foot from "./components/Foot";
+
 
 function App() {
   return (
@@ -9,6 +12,10 @@ function App() {
       <div>
         <Navbar />
         <BusinessSolutions />
+        <Industries />
+        <Set />
+        <Foot />
+        <Footer />
       </div>
     </div>
   );
