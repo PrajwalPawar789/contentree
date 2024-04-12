@@ -9,11 +9,11 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -39,25 +39,35 @@ const useStyles = makeStyles((theme) => ({
   input: {
     width: "100%",
   },
+  appBar: {
+    minHeight: "64px",
+  },
 }));
 
 function Navbar() {
   const classes = useStyles();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+  const handleSignUpClick = () => {
+    navigate("/signup");
+  };
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the form from refreshing the page
-    alert(`Search for: ${searchTerm}`); // For demonstration: show an alert with the search term
-    // Implement search functionality here
+    event.preventDefault();
+    alert(`Search for: ${searchTerm}`);
   };
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -88,10 +98,18 @@ function Navbar() {
             <Button className={classes.bButton} color="inherit">
               Newsletters
             </Button>
-            <Button className={classes.bButton} color="inherit">
+            <Button
+              className={classes.bButton}
+              color="inherit"
+              onClick={handleLoginClick}
+            >
               Login
             </Button>
-            <Button className={classes.SignButton} color="inherit">
+            <Button
+              className={classes.SignButton}
+              color="inherit"
+              onClick={handleSignUpClick}
+            >
               Sign Up
             </Button>
           </div>

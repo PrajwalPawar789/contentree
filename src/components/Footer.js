@@ -6,10 +6,11 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: '#182c3a',
-    padding: theme.spacing(6, 0),
+    padding: theme.spacing(8, 0),
     marginTop: 'auto',
     textAlign: 'center',
     color: '#ffffff',
+   
   },
   link: { // Added styles for links
     color: '#ffffff',
@@ -26,7 +27,7 @@ function Footer() {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        <Typography variant="subtitle1" align="center" component="p">
+        <Typography style={{fontFamily: 'Barlow'}} variant="subtitle1" align="center" component="p">
           © 2024 Contentree. All Rights Reserved | 
           <a href="/privacy" className={classes.link}>Privacy and Cookies</a> | 
           <a href="/legal" className={classes.link}>Legal</a> | 

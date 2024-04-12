@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    padding: theme.spacing(25, 2),
   },
   image: {
     maxWidth: "100%",
@@ -23,25 +24,29 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'flex-start', 
     textAlign: 'left',
+    fontFamily: "Barlow",
   },
   heading: {
     color: "#4faa00",
-    fontSize: "50px",
-    margin: "8px 0", 
+    fontSize: "60px",
+    margin: "5px 0", 
+    
   },
   paragraph: {
     color: "black",
     fontSize: "30px",
+    fontFamily: "Barlow",
     marginTop: "20px", 
   },
   buttonexplore: {
     width: "250px",
     height: "50px",
-    borderRadius: "25px",
+    borderRadius: "10px",
     margin: theme.spacing(1),
     color: "white",
     backgroundColor: "#4faa00",
-    fontSize: "16px",
+    fontSize: "18px",
+    fontFamily: "Barlow",
   },
 }));
 
