@@ -8,8 +8,8 @@ import {
   Checkbox,
   FormControlLabel,
 } from '@material-ui/core';
-import LinkedInIcon from '@material-ui/icons/LinkedIn'; // Correctly import LinkedIn Icon
-import image from "../images/register.png";
+import LinkedInIcon from '@material-ui/icons/LinkedIn'; 
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,9 +36,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Barlow',
     backgroundColor: "#0077b5",
     color: "white",
-    // '&:hover': {
-    //   backgroundColor: "#005c93",
-    // }
+  
   },
 }));
 
@@ -66,7 +64,7 @@ function SignUp() {
           variant="contained"
           startIcon={<LinkedInIcon />}
           className={classes.linkedInButton}
-          onClick={() => window.location.href = 'https://www.linkedin.com'}
+          onClick={() => window.location.href = "https://www.linkedin.com/company/contentree/"}
         >
           Sign Up with LinkedIn
         </Button>

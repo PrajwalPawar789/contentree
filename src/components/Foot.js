@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { useNavigate } from "react-router-dom";
-import LinkedInIcon from "@material-ui/icons/LinkedIn"; 
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: "#213848;",
     color: "#ffffff",
-    padding: theme.spacing(14, 0),
+    padding: theme.spacing(9, 0),
   },
   footerSection: {
     display: "flex",
@@ -45,34 +46,67 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   followUploadText: {
-    fontSize: "22px",
+    fontSize: "15px",
     fontFamily: "Barlow",
   },
   socialLink: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'white',
-    textDecoration: 'none',
-    marginTop: theme.spacing(2), 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    textDecoration: "none",
+    marginTop: theme.spacing(2),
     "&:hover": {
       textDecoration: "underline",
     },
   },
   linkedInIcon: {
     marginRight: theme.spacing(1),
-    fontSize: '35px',
+    fontSize: "30px",
+  },
+  uploadButton: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    backgroundColor: "transparent",
+    boxShadow: "none",
+    "&:hover": {
+      backgroundColor: "transparent",
+      boxShadow: "none",
+    },
+  },
+  uploadIcon: {
+    marginLeft: theme.spacing(1),
+    fontSize: "24px",
   },
 }));
 
 function Foot() {
   const classes = useStyles();
   const navigate = useNavigate();
+  const fileInputRef = useRef(null);
 
   const handleGetStartedClick = () => {
     navigate("/signup");
   };
 
+  const handleUploadClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleUploadAssetsClick = () => {
+    navigate("/signup");
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (!file) {
+      return;
+    }
+
+    console.log(file);
+  };
 
   return (
     <footer className={classes.footer}>
@@ -84,8 +118,8 @@ function Foot() {
               curated in an easy-to-use discovery platform
             </Typography>
           </Grid>
+
           <Grid item xs={12} sm={4} className={classes.footerSection}>
-            {/* Reintegrate the navigation links */}
             <a href="/" className={classes.link}>
               Blogs
             </a>
@@ -95,24 +129,37 @@ function Foot() {
             <a href="#contact" className={classes.link}>
               Solution Sets
             </a>
+
             <a href="/about-us" className={classes.link}>
               About us
             </a>
-            <a href="#contact" className={classes.link}>
+            <a href="mailto:contact@example.com" className={classes.link}>
               Contact Us
             </a>
           </Grid>
           <Grid item xs={12} sm={4} className={classes.footerSection}>
-           
-            <a href="https://www.linkedin.com/company/contentree/" className={classes.socialLink} target="_blank" rel="noopener noreferrer">
-              <LinkedInIcon className={classes.linkedInIcon} />
+            <a
+              href="https://www.linkedin.com/company/contentree/"
+              className={classes.socialLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Follow us on LinkedIn
+              <LinkedInIcon className={classes.linkedInIcon} />
             </a>
-            
-            <Typography variant="body2" className={classes.followUploadText}>
-              Upload your Assets
-            </Typography>
-            <Button className={classes.btn} onClick={handleGetStartedClick}>JOIN CONTENTREE</Button>
+
+            <Button
+              onClick={handleUploadAssetsClick}
+              className={classes.uploadButton}
+            >
+              <Typography variant="body2" className={classes.followUploadText}>
+                Upload your Assets
+              </Typography>
+              <CloudUploadIcon className={classes.uploadIcon} />
+            </Button>
+            <Button className={classes.btn} onClick={handleGetStartedClick}>
+              JOIN CONTENTREE
+            </Button>
           </Grid>
         </Grid>
       </Container>

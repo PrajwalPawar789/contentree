@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-// import imageUrl from "../images/solution.png";
+import imageUrl from "../images/vendors.jpg";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraph: {
     color: "black",
-    fontSize: "30px",
+    fontSize: "25px",
     marginTop: "20px",
     fontFamily: "Barlow",
   },
@@ -44,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "23px",
     fontFamily: "Barlow",
   },
+  image: {
+    paddingLeft: "100px",
+  },
 }));
 
 function Vendors() {
@@ -53,7 +56,7 @@ function Vendors() {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={6}>
-          {/* <img src={imageUrl} alt="solution.png" className={classes.image} /> */}
+          <img src={imageUrl} alt="solution.png" className={classes.image} />
         </Grid>
         <Grid item xs={12} sm={6} className={classes.textContainer}>
           <div className={classes.textSection}>
@@ -65,9 +68,9 @@ function Vendors() {
             </h1>
 
             <p className={classes.paragraph}>
-              Learn from reputable B2B brands 
-              about the products and solutions <br />
-              that can help your business grow
+              Learn from reputable B2B brands about the products and
+              <br />
+              solutions that can help your business grow
             </p>
             <div>
               <Button className={classes.vendors} variant="contained">

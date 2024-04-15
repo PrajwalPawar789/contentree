@@ -15,28 +15,27 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${imageUrl})`,
   },
   textContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    width: '100%',
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
   },
   textSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start', 
-    textAlign: 'left',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    textAlign: "left",
     fontFamily: "Barlow",
   },
   heading: {
     color: "#4faa00",
-    fontSize: "60px",
-    margin: "5px 0", 
-    
+    fontSize: "55px",
+    margin: "5px 0",
   },
   paragraph: {
     color: "black",
-    fontSize: "30px",
+    fontSize: "25px",
     fontFamily: "Barlow",
-    marginTop: "20px", 
+    marginTop: "20px",
   },
   buttonexplore: {
     width: "250px",
@@ -61,21 +60,26 @@ function Set() {
         </Grid>
         <Grid item xs={12} sm={6} className={classes.textContainer}>
           <div className={classes.textSection}>
-            <h1 className={classes.heading} style={{color: "#4faa00"}}>CURATED</h1>
-            <h1 className={classes.heading} style={{color: "black"}}>SOLUTION</h1>
-            <h1 className={classes.heading} style={{color: "black"}}>SETS</h1>
+            <h1 className={classes.heading} style={{ color: "#4faa00" }}>
+              CURATED
+            </h1>
+            <h1 className={classes.heading} style={{ color: "black" }}>
+              SOLUTION
+            </h1>
+            <h1 className={classes.heading} style={{ color: "black" }}>
+              SETS
+            </h1>
             <p className={classes.paragraph}>
-              Save time with our uniquely organized <br/>
-              collections of tried and tested solutions to <br/>
+              Save time with our uniquely organized <br />
+              collections of tried and tested solutions to <br />
               industry challenges.
             </p>
             <div>
-          <Button className={classes.buttonexplore} variant="contained">
-          EXPLORE SOLUTION SETS
-      </Button>
+              <Button className={classes.buttonexplore} variant="contained">
+                EXPLORE SOLUTION SETS
+              </Button>
+            </div>
           </div>
-          </div>
-       
         </Grid>
       </Grid>
     </div>
